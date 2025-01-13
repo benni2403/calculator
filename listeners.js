@@ -1,8 +1,3 @@
-const calc_button = document.getElementById("calc_button");
-const input = document.getElementById("input");
+const container = document.querySelector(".container");
 
-calc_button.addEventListener("click", () => {
-    let input_string = input.value;
-    let result = operate(input_string);
-    input.value = result;
-});
+container.addEventListener("click", (e) => {processInput(e.target.textContent)})
