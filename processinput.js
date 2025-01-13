@@ -104,10 +104,15 @@ function processInput(string) {
 
         case "+":
         case "-":
+        case "*":
         case "x":
         case "/":
         case "%":
         case "SQRT":
+            if (string == "*")
+            {
+                string = "x";
+            }
             //Z.B. operation = "1+1"
             if(obj.operator && obj.second_number) {
                 result = calculate(obj);
@@ -211,6 +216,7 @@ function processInput(string) {
             break;
 
         case "=":
+        case "enter":
             if(obj.valid) {
                 result = calculate(obj);
                 updatePanel(result);
