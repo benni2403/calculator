@@ -5,15 +5,19 @@ const operations = [
     "/",
     "%",
 ]
-const operations_string = "\\" + operations.join("\\");
+const operations_string = "[\\" 
++ operations.join("\\")
++ "]"
++ "|SQRT";
 
 function operate(userInput) {
     userInput = userInput.replaceAll(" ", "");
 
-    // const regex = /^(-?\d+)([\+\-\x\/\%])?(-?\d+)?$/;
-    const regex = new RegExp(`^(-?\\d+)([${operations_string}])?(-?\\d+)?$`);
+    const regex = new RegExp(`^(-?\\d+(?:\\.\\d+)?)(${operations_string})?(-?\\d+(?:\\.\\d+)?)?$`);
     // console.log(regex);
+    // const regex = /^(-?\d+(?:\.\d+)?)([\+\-\x\/\%]|SQRT)?(-?\d+(?:\.\d+)?)?$/;
     const match = userInput.match(regex);
+    // console.log(match);
     
     let obj = {
         first_number: undefined,

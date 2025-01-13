@@ -17,3 +17,11 @@ function divide(a, b) {
 function percent(a) {
     return a / 100;
 }
+
+function squareRoot(a) {
+    return Math.sqrt(a);
+}
+
+function round(a) {
+    return Math.round(1000 * a) / 1000;
+}
