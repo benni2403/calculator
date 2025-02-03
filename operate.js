@@ -4,11 +4,11 @@ const operations = [
     "x",
     "/",
     "%",
+    "√",
 ]
 const operations_string = "[\\" 
 + operations.join("\\")
 + "]"
-+ "|SQRT";
 
 function operate(userInput) {
     userInput = userInput.replaceAll(" ", "");

@@ -1,19 +1,40 @@
-/* FONT FAMILY AND MARGIN */
+/* FONT FAMILY AND COLOR VARIABLES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --main: #9CA1B1;
-    --lightaccent: #9B91A9;
-    --lightshades: #FBFAFA;
-    --darkaccent: #897289;
-    --darkshades: #2C5688;
+    --main: #F1CCA4;
+    --lightaccent: #E3DFDC;
+    --lightshades: #CFC1B5;
+    --darkaccent: #4C4C4C;
+    --darkshades: #BFBFA1;
+    --light: #F4EFEA;
+    --middle: #E1D8C8;
+    --dark: #1B1B1B;
+    --lightorange: #EAB270;
+    --middleorange: #E69648;
+    --darkorange: #D96329;
+    --darkdarkorange: #AD5023;
 }
 
 * {
     box-sizing: border-box;
+    font-family: "Raleway", serif;
+    font-size: 1vw;
 }
 
-body {
-    margin: 0;
+.math {
+    font-family: "Orbitron", serif;
+    font-size: 2vw;
+    
+    display: block;
+    justify-content: right;
+    align-items: center;
+}
+
+span.math {
+    flex: 0 0 auto;
 }
 
 /* COLORS */
@@ -26,22 +47,104 @@ body {
 }
 
 /* ALIGNMENT & FLEXBOXING, WIDTHS & HEIGHTS */
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container {
-    width: max-content;
+    height: 50vh;
+    width: 20vw;
+    /* margin: 25vh 40vw; */
+
     display: flex;
     flex-direction: column;
 }
 
+.container * {
+    flex: 1 5 50px;
+}
+
 .panel {
-    flex-basis: 50px;
+    flex-grow: 5;
+    flex-shrink: 1;
+
+    margin: 0 10px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .row {
+    flex-grow: 3;
+    flex-shrink: 3;
+
     display: flex;
+    justify-content: space-evenly;
 }
 
 .button {
-    width: 50px;
-    height: 50px;
+    /* aspect-ratio: 1/1; */
+    display: flex;
+    flex: 0 1 50px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* BORDERS, BACKGROUND AND FONT COLORS */
+
+.container {
+    border: 10px solid var(--lightaccent);
+    border-radius: 25px;
+    
+    background-color: var(--lightaccent);
+}
+
+.panel {
+    border: 5px solid var(--dark);
+    border-radius: 5px;
+
+    background-color: var(--darkshades);
+}
+
+.button {
+    border: 8px solid var(--middle);
+    border-radius: 15%;
+    
+    background-color: var(--light);
+}
+
+.m {
+    border-color: var(--middleorange);
+    background-color: var(--lightorange);
+}
+
+.c {
+    border-color: var(--darkdarkorange);
+    background-color: var(--darkorange);
+}
+
+/* HOVER ANIMATIONS */
+
+.button:hover {
+    background-color: var(--middle);
+}
+
+.m:hover {
+    background-color: var(--middleorange);
+}
+
+.c:hover {
+    background-color: var(--darkdarkorange);
+}
+
+/* MISC */
+
+.button {
+    user-select: none;
 }

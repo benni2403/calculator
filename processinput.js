@@ -28,7 +28,7 @@ function calculate(obj) {
             result = percent(obj.first_number);
             break;
 
-        case "SQRT":
+        case "√":
             result = squareRoot(obj.first_number);
             break;
 
@@ -108,7 +108,7 @@ function processInput(string) {
         case "x":
         case "/":
         case "%":
-        case "SQRT":
+        case "√":
             if (string == "*")
             {
                 string = "x";
@@ -141,7 +141,7 @@ function processInput(string) {
                 appendingNumbersAllowed = true;
             }
 
-            if (string == "SQRT") {
+            if (string == "√") {
                 let new_operation = getPanelContent();
                 let new_obj = operate(new_operation);
                 // console.log(new_obj);
@@ -225,6 +225,7 @@ function processInput(string) {
                 updatePanel("Invalid operation");
             }
             panelShowsResult = true;
+            appendingNumbersAllowed = true;
             break;
     
         default:
